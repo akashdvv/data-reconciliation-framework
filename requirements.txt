@@ -1,0 +1,6 @@
+duckdb>=1.1
+pandas>=2.0
+openpyxl>=3.1
+pyyaml>=6
+matplotlib>=3.7
+pytest>=8

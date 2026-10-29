@@ -1,0 +1,41 @@
+# Month-end revenue-cycle reconciliation: EHR -> Billing -> Finance
+period:
+  start: 2026-09-01
+  end: 2026-09-30
+
+sources:
+  ehr:      {file: data/ehr_encounters.csv,   key: encounter_id}
+  billing:  {file: data/billing_claims.csv,   key: encounter_ref}
+  finance:  {file: data/finance_payments.csv, key: encounter_ref}
+  mapping:  {file: data/dept_mapping.csv}
+
+# keys are compared after normalisation so formatting drift (E000123 vs E123) is caught and explained
+key_normalisation: "'E' || lpad(cast(cast(regexp_replace({col}, '[^0-9]', '', 'g') as integer) as varchar), 6, '0')"
+
+tolerance:
+  amount_abs: 0.05          # $ - rounding differences below this are not exceptions
+  tieout_pct: 0.5           # % - department totals may differ by at most this much
+
+release_gate:
+  block_on: [missing_in_billing, duplicate_claim, status_conflict, orphan_claim]
+  max_total_variance_pct: 0.5
+
+checks:
+  - {id: missing_in_billing, sql: sql/01_missing_in_billing.sql, severity: critical, owner: Charge capture,
+     root_cause: "Encounter completed but never billed (charge capture gap)", action: "Create claim; review charge-capture workqueue"}
+  - {id: key_format,         sql: sql/02_key_format.sql,         severity: warning,  owner: Data engineering,
+     root_cause: "Billing system dropped leading zeros from the encounter key", action: "Normalise keys in the billing interface"}
+  - {id: orphan_claim,       sql: sql/03_orphan_claims.sql,      severity: critical, owner: Billing,
+     root_cause: "Claim references an encounter that does not exist", action: "Investigate claim origin; void if invalid"}
+  - {id: duplicate_claim,    sql: sql/04_duplicate_claims.sql,   severity: critical, owner: Billing,
+     root_cause: "Claim resubmitted without voiding the original", action: "Void the duplicate before payer adjudication"}
+  - {id: amount_mismatch,    sql: sql/05_amount_mismatch.sql,    severity: high,     owner: Charge capture,
+     root_cause: "Charge changed in EHR after the claim was created", action: "Submit corrected claim"}
+  - {id: cutoff_timing,      sql: sql/06_cutoff_timing.sql,      severity: medium,   owner: Finance,
+     root_cause: "Discharged in period, billed next period (cut-off)", action: "Accrue revenue in the correct period"}
+  - {id: dept_mapping,       sql: sql/07_dept_mapping.sql,       severity: medium,   owner: Data engineering,
+     root_cause: "Billing department code missing from the mapping table", action: "Add code to dept_mapping"}
+  - {id: status_conflict,    sql: sql/08_status_conflict.sql,    severity: critical, owner: Billing,
+     root_cause: "Cancelled encounter was billed", action: "Void claim; refund if paid"}
+  - {id: cost_center,        sql: sql/09_cost_center.sql,        severity: medium,   owner: Finance,
+     root_cause: "Payment posted to the wrong cost center", action: "Journal entry to reclassify"}

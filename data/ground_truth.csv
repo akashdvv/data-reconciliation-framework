@@ -1,0 +1,110 @@
+encounter_id,issue_type,description
+E002785,missing_in_billing,Unbilled encounter (charge capture gap)
+E003985,missing_in_billing,Unbilled encounter (charge capture gap)
+E001817,missing_in_billing,Unbilled encounter (charge capture gap)
+E000771,missing_in_billing,Unbilled encounter (charge capture gap)
+E003101,missing_in_billing,Unbilled encounter (charge capture gap)
+E001120,missing_in_billing,Unbilled encounter (charge capture gap)
+E002348,missing_in_billing,Unbilled encounter (charge capture gap)
+E002312,missing_in_billing,Unbilled encounter (charge capture gap)
+E000594,missing_in_billing,Unbilled encounter (charge capture gap)
+E003678,missing_in_billing,Unbilled encounter (charge capture gap)
+E001891,missing_in_billing,Unbilled encounter (charge capture gap)
+E000974,missing_in_billing,Unbilled encounter (charge capture gap)
+E001415,missing_in_billing,Unbilled encounter (charge capture gap)
+E001576,missing_in_billing,Unbilled encounter (charge capture gap)
+E003870,missing_in_billing,Unbilled encounter (charge capture gap)
+E001484,missing_in_billing,Unbilled encounter (charge capture gap)
+E002046,missing_in_billing,Unbilled encounter (charge capture gap)
+E002415,missing_in_billing,Unbilled encounter (charge capture gap)
+E002448,key_format,Key format mismatch (leading zeros dropped)
+E003153,key_format,Key format mismatch (leading zeros dropped)
+E002597,key_format,Key format mismatch (leading zeros dropped)
+E001613,key_format,Key format mismatch (leading zeros dropped)
+E001320,key_format,Key format mismatch (leading zeros dropped)
+E001246,key_format,Key format mismatch (leading zeros dropped)
+E002080,key_format,Key format mismatch (leading zeros dropped)
+E003920,key_format,Key format mismatch (leading zeros dropped)
+E003240,key_format,Key format mismatch (leading zeros dropped)
+E001129,key_format,Key format mismatch (leading zeros dropped)
+E002042,key_format,Key format mismatch (leading zeros dropped)
+E003879,key_format,Key format mismatch (leading zeros dropped)
+E001005,duplicate_claim,Duplicate claim submission
+E002983,duplicate_claim,Duplicate claim submission
+E000035,duplicate_claim,Duplicate claim submission
+E001179,duplicate_claim,Duplicate claim submission
+E001868,duplicate_claim,Duplicate claim submission
+E003440,duplicate_claim,Duplicate claim submission
+E002401,duplicate_claim,Duplicate claim submission
+E000852,duplicate_claim,Duplicate claim submission
+E003637,duplicate_claim,Duplicate claim submission
+E003945,duplicate_claim,Duplicate claim submission
+E003677,duplicate_claim,Duplicate claim submission
+E003830,duplicate_claim,Duplicate claim submission
+E002207,duplicate_claim,Duplicate claim submission
+E001519,duplicate_claim,Duplicate claim submission
+E000610,duplicate_claim,Duplicate claim submission
+E000688,amount_mismatch,Charge changed after billing
+E001685,amount_mismatch,Charge changed after billing
+E000094,amount_mismatch,Charge changed after billing
+E000011,amount_mismatch,Charge changed after billing
+E001594,amount_mismatch,Charge changed after billing
+E001668,amount_mismatch,Charge changed after billing
+E002992,amount_mismatch,Charge changed after billing
+E003245,amount_mismatch,Charge changed after billing
+E001938,amount_mismatch,Charge changed after billing
+E003382,amount_mismatch,Charge changed after billing
+E002888,amount_mismatch,Charge changed after billing
+E001257,amount_mismatch,Charge changed after billing
+E000310,amount_mismatch,Charge changed after billing
+E000693,amount_mismatch,Charge changed after billing
+E003951,amount_mismatch,Charge changed after billing
+E000855,amount_mismatch,Charge changed after billing
+E002515,amount_mismatch,Charge changed after billing
+E002567,amount_mismatch,Charge changed after billing
+E001752,amount_mismatch,Charge changed after billing
+E003822,amount_mismatch,Charge changed after billing
+E000456,cutoff_timing,Period cut-off (claim dated next month)
+E002501,cutoff_timing,Period cut-off (claim dated next month)
+E003858,cutoff_timing,Period cut-off (claim dated next month)
+E002570,cutoff_timing,Period cut-off (claim dated next month)
+E002590,cutoff_timing,Period cut-off (claim dated next month)
+E001934,cutoff_timing,Period cut-off (claim dated next month)
+E003451,cutoff_timing,Period cut-off (claim dated next month)
+E001047,cutoff_timing,Period cut-off (claim dated next month)
+E000191,cutoff_timing,Period cut-off (claim dated next month)
+E003791,cutoff_timing,Period cut-off (claim dated next month)
+E002973,cutoff_timing,Period cut-off (claim dated next month)
+E001611,cutoff_timing,Period cut-off (claim dated next month)
+E000313,cutoff_timing,Period cut-off (claim dated next month)
+E000725,cutoff_timing,Period cut-off (claim dated next month)
+E002138,dept_mapping,Department code missing from mapping table
+E000950,dept_mapping,Department code missing from mapping table
+E001329,dept_mapping,Department code missing from mapping table
+E002674,dept_mapping,Department code missing from mapping table
+E001152,dept_mapping,Department code missing from mapping table
+E002874,dept_mapping,Department code missing from mapping table
+E002375,dept_mapping,Department code missing from mapping table
+E002706,dept_mapping,Department code missing from mapping table
+E001581,dept_mapping,Department code missing from mapping table
+E000418,dept_mapping,Department code missing from mapping table
+E003364,status_conflict,Cancelled encounter was billed
+E002667,status_conflict,Cancelled encounter was billed
+E002938,status_conflict,Cancelled encounter was billed
+E003297,status_conflict,Cancelled encounter was billed
+E000539,status_conflict,Cancelled encounter was billed
+E000670,status_conflict,Cancelled encounter was billed
+E001801,status_conflict,Cancelled encounter was billed
+E002755,status_conflict,Cancelled encounter was billed
+E000767,status_conflict,Cancelled encounter was billed
+E003222,cost_center,Payment posted to wrong cost center
+E002306,cost_center,Payment posted to wrong cost center
+E001657,cost_center,Payment posted to wrong cost center
+E002250,cost_center,Payment posted to wrong cost center
+E002371,cost_center,Payment posted to wrong cost center
+E000456,cost_center,Payment posted to wrong cost center
+E002429,cost_center,Payment posted to wrong cost center
+E003944,cost_center,Payment posted to wrong cost center
+E001805,cost_center,Payment posted to wrong cost center
+E001418,cost_center,Payment posted to wrong cost center
+E000332,cost_center,Payment posted to wrong cost center
